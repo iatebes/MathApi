@@ -33,7 +33,8 @@ public class MathServlet extends HttpServlet {
             } catch (Exception ex) {
                 y = 0;
             }
-            out.println(x + y);
+            String ip_server = request.getLocalAddr();
+            out.println("Response from " + ip_server + ": " + (x + y));
         }
     }
 
