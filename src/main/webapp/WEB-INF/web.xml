@@ -4,9 +4,17 @@
         <servlet-name>MathServlet</servlet-name>
         <servlet-class>com.mathapi.MathServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RootServlet</servlet-name>
+        <servlet-class>com.mathapi.RootServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MathServlet</servlet-name>
         <url-pattern>/math</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RootServlet</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
