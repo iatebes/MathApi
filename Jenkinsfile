@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Run container') {
       steps {
-        sh 'docker run -d -p 8088:8080 -name web-math-api math-api'
+        sh 'docker run -d -p 8088:8080 --name web-math-api math-api'
       }
     }
   }
