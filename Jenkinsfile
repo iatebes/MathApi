@@ -1,9 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Clean docker image') {
+    stage('Clean docker image & container') {
       steps {
         sh 'docker rmi math-api'
+        sh 'docker stop web-math-api'
+        sh 'docker rm web-math-api'
       }
     }
     stage('Build & make docker image') {
