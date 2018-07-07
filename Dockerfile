@@ -26,6 +26,7 @@ RUN cd /working &&
     chmod +x init_db_mysql.sh &&
     init_db_mysql.sh &&
     mvn package &&
+    cp -f /target/MathApi*.war /usr/apache-tomcat-8.5.32/webapps/ROOT.war
 
 # expose port cua TOMCAT
 EXPOSE 8080
