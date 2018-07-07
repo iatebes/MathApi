@@ -3,16 +3,16 @@ FROM ubuntu
 LABEL maintainer="iatebes"
 
 # bien moi truong
-ENV JAVA_HOME /your/java/installation-path
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ENV DB_NAME catalogdb
 ENV DB_USER catalog
 ENV DB_PASS 1
 ENV DB_CHARSET utf8
 
 # add file vao container
-ADD init_db_mysql.sh \working
-ADD src \working\src
-ADD pom.xml \working
+ADD init_db_mysql.sh /working
+ADD src /working/src
+ADD pom.xml /working
 ADD apache-tomcat-8.5.32.tar.gz /usr
 
 # install dependency
