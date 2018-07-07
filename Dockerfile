@@ -26,6 +26,7 @@ RUN cd /working && \
     apt-get install mysql-server -y && \
     service mysql start && \
     chmod +x init_db_mysql.sh && \
+    chmod +x start.sh && \
     ./init_db_mysql.sh && \
     mvn -U package && \
     rm -R -f /usr/apache-tomcat-8.5.32/webapps/ROOT && \
@@ -35,4 +36,4 @@ RUN cd /working && \
 EXPOSE 8080
 
 # chay TOMCAT
-CMD ["/usr/apache-tomcat-8.5.32/bin/catalina.sh", "run"]
+ENTRYPOINT ["./start.sh"]
