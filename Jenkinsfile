@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Clean docker image & container') {
       steps {
-        sh './del_image.sh math-api:lastest'
-        sh './del_container.sh web-math-api'
+        sh 'sudo ./del_image.sh math-api:lastest'
+        sh 'sudo ./del_container.sh web-math-api'
       }
     }
     stage('Build & make docker image') {
