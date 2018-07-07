@@ -24,7 +24,6 @@ RUN cd /working && \
     add-apt-repository ppa:openjdk-r/ppa -y && \
     apt-get install openjdk-8-jdk -y && \
     apt-get install mysql-server -y && \
-    chown -R mysql:mysql /var/lib/mysql /var/run/mysqld && \
     service mysql start && \
     chmod +x init_db_mysql.sh && \
     ./init_db_mysql.sh && \
