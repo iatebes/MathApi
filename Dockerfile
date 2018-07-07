@@ -24,9 +24,12 @@ RUN cd /working && \
     add-apt-repository ppa:openjdk-r/ppa -y && \
     apt-get install openjdk-8-jdk -y && \
     apt-get install mysql-server -y && \
+    chown -R mysql:mysql /var/lib/mysql /var/run/mysqld && \
     service mysql start && \
     chmod +x init_db_mysql.sh && \
-    ./init_db_mysql.sh && mvn -U package && \
+    ./init_db_mysql.sh && \
+    mvn -U package && \
+    rm -R -f /usr/apache-tomcat-8.5.32/webapps/ROOT && \
     cp -f ./target/MathApi*.war /usr/apache-tomcat-8.5.32/webapps/ROOT.war
 
 # expose port cua TOMCAT
