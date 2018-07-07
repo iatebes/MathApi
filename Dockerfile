@@ -11,8 +11,8 @@ ENV DB_CHARSET utf8
 # add file vao container
 ADD . /working
 ADD apache-tomcat-8.5.32.tar.gz /usr
-ADD jdk-8u161-linux-x64.tar.gz /usr
-ADD apache-maven-3.5.3-bin.tar.gz /usr
+ADD jre-8u171-linux-x64.tar.gz /usr
+ADD apache-maven-3.5.4-bin.tar.gz /usr
 
 # bien moi truong
 ENV JAVA_HOME /usr/jre1.8.0_171
