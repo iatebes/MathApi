@@ -11,7 +11,7 @@ ENV DB_CHARSET utf8
 
 # add file vao container
 ADD init_db_mysql.sh \working
-ADD src \working
+ADD src \working\src
 ADD pom.xml \working
 ADD apache-tomcat-8.5.32.tar.gz /usr
 
