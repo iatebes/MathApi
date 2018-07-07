@@ -36,4 +36,4 @@ RUN cd /working && \
 EXPOSE 8080
 
 # chay TOMCAT
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["/working/start.sh"]
