@@ -4,7 +4,7 @@ pipeline {
     stage('Clean docker image & container') {
       steps {
         sh 'chmod +x del_image.sh'
-        sh './del_image.sh math-api:lastest'
+        sh './del_image.sh math-api:latest'
         sh 'chmod +x del_container.sh'
         sh './del_container.sh web-math-api'
       }
