@@ -13,7 +13,7 @@ ENV DB_CHARSET utf8
 ADD . /working
 
 # install dependency
-RUN cd /working && apt-get update -y && apt-get install default-jdk -y && apt-get install mysql-server -y && apt-get install maven -y && apt-get install vim -y && service mysql start && chmod +x init_db_mysql.sh && init_db_mysql.sh && mvn package && cp -f /target/MathApi*.war /usr/apache-tomcat-8.5.32/webapps/ROOT.war
+RUN cd /working && apt-get update -y && apt-get install default-jdk -y && apt-get install mysql-server -y && apt-get install maven -y && apt-get install vim -y && service mysql start && chmod +x init_db_mysql.sh && ./init_db_mysql.sh && mvn package && cp -f /target/MathApi*.war /usr/apache-tomcat-8.5.32/webapps/ROOT.war
 
 # expose port cua TOMCAT
 EXPOSE 8080
