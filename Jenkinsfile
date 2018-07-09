@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'DockerLabel'
+    }
+
+  }
   stages {
     stage('Test') {
       steps {
